@@ -1,21 +1,25 @@
 // Grab the articles as a json
 $.getJSON("/articles", function(data) {
+    console.log("success!")
     // For each one
     for (var i = 0; i < data.length; i++) {
+      console.log("looop")
       // Display the apropos information on the page
-      $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
+      $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].summary + "<br /><a href='" + data[i].link + "'>Click Here for Article</a></p>");
     }
+    console.log(data);
   });
   
   //Add button to index.html!
   $(document).on("click", ".btn", function() {
+    console.log("scraping!")
     $.ajax({
       method: "GET",
       url: "/scrape"
     })
     .then(function(data) {
       console.log(data);
-      //append article info onto html
+      // window.location = "/"
     });
 
   });
