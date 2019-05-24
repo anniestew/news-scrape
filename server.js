@@ -45,7 +45,7 @@ app.get("/scrape", function(req, res) {
 
       result.summary = $(this).children("div.media-body").children("div.article-info-extended").children("div.summary").text();
 
-      result.link = $(this).children("div.media-body").children("h3.headline").find("a").attr("href");
+      result.link = "http://www.time.com/" + $(this).children("div.media-body").children("h3.headline").find("a").attr("href");
     
       console.log(result);
 
