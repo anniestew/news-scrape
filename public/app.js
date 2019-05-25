@@ -5,7 +5,7 @@ $.getJSON("/articles", function(data) {
     for (var i = 0; i < data.length; i++) {
       console.log("looop")
       // Display the apropos information on the page
-      $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].summary + "<br /><a href='" + data[i].link + "'>Click Here for Article</a></p>");
+      $("#articles").prepend("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].summary + "<br /><a href='" + data[i].link + "'>Click Here for Article</a></p>");
     }
     console.log(data);
   });
